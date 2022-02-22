@@ -1,6 +1,7 @@
 #include "mpi.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+
+using namespace std;
 
 int main(int argc, char* argv[])
 {
@@ -18,7 +19,7 @@ int main(int argc, char* argv[])
 	{
 		char helloStr[12];
 		MPI_Recv(helloStr, _countof(helloStr), MPI_CHAR, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		printf("Rank 1 recieved string %s from Rank 0\n", helloStr);
+		cout << helloStr << endl;
 	}
 
 	MPI_Finalize();
